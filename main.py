@@ -12,9 +12,15 @@ def main():
     text = get_book_text(path_to_book)
     num_words = count_words(text)    
     frequency = sorted_char_frequency(count_char(text))
-
+    print("============ BOOKBOT ============")
+    print(f"Analyzing book found at {path_to_book}...")
+    print("----------- Word Count ----------")
     print(f"Found {num_words} total words")
-    print(f"{frequency}")
+    print("--------- Character Count -------")
+    for key in frequency:
+        if key["char"].isalpha():
+            print(f"{key["char"]}: {key["num"]}")
+    print("============= END ===============")
 
 if __name__ == "__main__":  
     main()
